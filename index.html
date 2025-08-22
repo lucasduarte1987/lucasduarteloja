@@ -1,390 +1,397 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Lucas Duarte | Loja Oficial (Uso Educacional)</title>
-  <meta name="description" content="Loja oficial do personagem educativo Lucas Duarte. Equipamentos legais para pesquisa em segurança digital. Compras via WhatsApp." />
+  <title>Loja Lucas Duarte — Tecnologia & Segurança (Promoções)</title>
+  <meta name="description" content="Loja simples e profissional com produtos legais de tecnologia e cibersegurança. Todos os botões direcionam para o WhatsApp do vendedor." />
+  <meta property="og:title" content="Loja Lucas Duarte — Tecnologia & Segurança" />
+  <meta property="og:description" content="Promoções especiais. Fale no WhatsApp para comprar." />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #0b1520;
-      --card: #101b29;
-      --muted: #9fb2c8;
-      --fg: #e9f0f8;
-      --primary: #3b82f6; /* azul */
-      --accent: #22d3ee;  /* ciano */
-      --ok: #10b981;
-      --warn: #f59e0b;
-      --danger: #ef4444;
-      --shadow: 0 10px 30px rgba(0,0,0,.25);
-      --radius: 18px;
+    :root{
+      --bg:#0b1220;          /* azul bem escuro */
+      --card:#0f1730;
+      --primary:#d7263d;     /* vermelho destaque */
+      --primary-2:#ff5964;   /* vermelho claro */
+      --accent:#1b3a6f;      /* azul acentuado */
+      --text:#f4f6fb;
+      --muted:#a8b3cf;
+      --ok:#2ecc71;
+      --shadow:0 10px 30px rgba(0,0,0,.35);
+      --radius:18px;
     }
-    * { box-sizing: border-box; }
-    html, body { height: 100%; }
-    body{
-      margin: 0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, Helvetica Neue, Arial, "Apple Color Emoji", "Segoe UI Emoji";
-      background: radial-gradient(1000px 600px at 10% -10%, #142136 0%, transparent 60%),
-                  radial-gradient(1000px 600px at 110% 10%, #0f2337 0%, transparent 60%),
-                  var(--bg);
-      color: var(--fg);
-    }
-    a { color: inherit; text-decoration: none; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 24px; }
+    *{box-sizing:border-box}
+    html,body{margin:0;height:100%;background:radial-gradient(1200px 600px at 10% -10%,rgba(215,38,61,.18),transparent),linear-gradient(180deg,#0b1220 0%, #0a0f1c 100%);color:var(--text);font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1150px;margin:0 auto;padding:24px}
+    header{position:sticky;top:0;backdrop-filter:saturate(1.4) blur(10px);background:linear-gradient(180deg,rgba(11,18,32,.9),rgba(11,18,32,.55));border-bottom:1px solid rgba(255,255,255,.06);z-index:20}
+    .nav{display:flex;align-items:center;justify-content:space-between;gap:16px;padding:14px 24px}
+    .logo{display:flex;align-items:center;gap:12px;font-weight:800;letter-spacing:.2px}
+    .logo-mark{width:34px;height:34px;border-radius:50%;background:conic-gradient(from 210deg at 50% 50%, var(--primary), var(--accent), #2d6cdf, var(--primary));box-shadow:0 0 0 4px rgba(255,255,255,.06)}
+    .tag{font-size:12px;color:var(--muted);padding:4px 10px;border:1px solid rgba(255,255,255,.08);border-radius:999px}
+    .cta{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(120deg,var(--primary) 0%, var(--primary-2) 100%);padding:12px 18px;border-radius:12px;font-weight:700;box-shadow:var(--shadow)}
+    .cta:hover{transform:translateY(-1px);}
 
-    /* Header */
-    header{
-      position: sticky; top: 0; z-index: 20;
-      backdrop-filter: blur(10px);
-      background: linear-gradient(180deg, rgba(11,21,32,.9), rgba(11,21,32,.6));
-      border-bottom: 1px solid rgba(255,255,255,.06);
-    }
-    .brand{ display:flex; align-items:center; gap:12px; }
-    .logo{
-      width: 42px; height: 42px;
-      display:grid; place-items:center;
-      background: linear-gradient(135deg, var(--primary), var(--accent));
-      color:#001222; font-weight: 800; border-radius: 12px;
-      box-shadow: var(--shadow);
-    }
-    .brand h1{ font-size: 18px; margin:0; letter-spacing:.5px; }
-    .brand span{ display:block; font-size:12px; color:var(--muted); margin-top:2px; }
+    .hero{padding:38px 24px 10px}
+    .hero-wrap{display:grid;grid-template-columns:1.2fr .8fr;gap:24px;align-items:center}
+    .title{font-size:clamp(28px,4vw,44px);line-height:1.06;margin:0 0 10px;font-weight:800}
+    .subtitle{font-size:clamp(14px,2vw,17px);color:var(--muted);max-width:720px}
+    .ribbon{display:inline-flex;align-items:center;gap:8px;background:rgba(29,61,127,.3);border:1px solid rgba(255,255,255,.08);padding:6px 12px;border-radius:999px;margin:16px 0 22px}
+    .hero-card{background:linear-gradient(180deg,rgba(15,23,48,.9),rgba(10,15,28,.9));border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:20px;box-shadow:var(--shadow)}
+    .hero-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 
-    /* Notice */
-    .notice{ margin-top: 14px; padding: 12px 16px; background: #0d2135; border:1px solid rgba(255,255,255,.08); border-radius: 14px; color: var(--muted); }
-    .notice b{ color: var(--fg); }
+    .section{padding:24px}
+    .section h2{font-size:clamp(20px,3vw,28px);margin:0 0 16px}
 
-    /* Hero */
-    .hero{ display:grid; grid-template-columns: 1.3fr .7fr; gap: 24px; align-items:center; padding: 36px 0 18px; }
-    .hero h2{ font-size: clamp(24px, 2.6vw, 40px); margin:0 0 8px; }
-    .hero p{ margin: 0 0 18px; color: var(--muted); }
-    .pill{ display:inline-flex; align-items:center; gap:8px; padding:6px 10px; border:1px solid rgba(255,255,255,.08); border-radius: 999px; color: var(--muted); font-size: 12px; }
-    .cta{ display:flex; gap:12px; align-items:center; }
-    .btn{
-      border:0; cursor:pointer; font-weight:700; letter-spacing:.3px;
-      padding: 12px 16px; border-radius: 14px; transition: transform .08s ease, box-shadow .15s ease, background .2s;
-      box-shadow: var(--shadow);
-    }
-    .btn-primary{ background: linear-gradient(135deg, var(--primary), #2563eb); color: white; }
-    .btn-secondary{ background: #0f1b2a; color: var(--fg); border:1px solid rgba(255,255,255,.08); }
-    .btn:hover{ transform: translateY(-1px); }
+    .grid{display:grid;grid-template-columns:repeat(12,1fr);gap:18px}
+    .col-3{grid-column:span 12}
+    @media (min-width:720px){.col-3{grid-column:span 6}}
+    @media (min-width:1000px){.col-3{grid-column:span 3}}
 
-    /* Toolbar */
-    .toolbar{ margin: 12px 0 0; display:flex; gap:12px; flex-wrap:wrap; align-items:center; }
-    .input{
-      flex: 1 1 280px; display:flex; align-items:center; gap:10px; background: #0f1c2b; border:1px solid rgba(255,255,255,.08); border-radius: 14px; padding:10px 12px; color: var(--fg);
-    }
-    .input input{ flex:1; background:transparent; border:0; outline:0; color:var(--fg); font-size:14px; }
-    .chips{ display:flex; gap:8px; flex-wrap:wrap; }
-    .chip{ padding:8px 12px; border: 1px solid rgba(255,255,255,.08); border-radius: 999px; color: var(--muted); cursor:pointer; user-select:none; }
-    .chip.active{ background: #173251; color:#eaf2ff; border-color:rgba(255,255,255,.12) }
+    .card{position:relative;background:linear-gradient(180deg,rgba(16,25,49,.92),rgba(12,18,36,.92));border:1px solid rgba(255,255,255,.06);border-radius:var(--radius);padding:16px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:10px}
+    .badge{position:absolute;top:12px;left:12px;background:linear-gradient(120deg,var(--primary),var(--primary-2));padding:6px 10px;border-radius:999px;font-size:12px;font-weight:800}
+    .img{height:120px;border-radius:14px;background:linear-gradient(120deg,rgba(215,38,61,.22),rgba(29,61,127,.22));display:flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,.06)}
+    .name{font-weight:700;font-size:16px}
+    .desc{color:var(--muted);font-size:13px;min-height:36px}
+    .price{display:flex;align-items:center;gap:10px}
+    .price .old{color:#93a0bc;text-decoration:line-through}
+    .price .new{font-weight:800;color:#fff;font-size:18px}
+    .buy{margin-top:auto;display:flex;gap:10px}
+    .btn{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:10px;padding:12px 14px;border-radius:12px;font-weight:700;border:1px solid rgba(255,255,255,.08);background:linear-gradient(120deg,var(--accent),#2d4a87);box-shadow:var(--shadow)}
+    .btn:hover{filter:brightness(1.05)}
+    .btn-whatsapp{background:linear-gradient(120deg,#00a884,#06d6a0)}
 
-    /* Grid */
-    .grid{ display:grid; grid-template-columns: repeat(12, 1fr); gap: 16px; margin-top: 22px; }
-    .card{
-      grid-column: span 4; min-height: 210px; display:flex; flex-direction:column; justify-content:space-between;
-      background: var(--card); border:1px solid rgba(255,255,255,.08); border-radius: var(--radius); padding: 18px; box-shadow: var(--shadow);
-    }
-    .card h3{ margin: 2px 0 6px; font-size: 18px; }
-    .card p{ margin:0; color: var(--muted); }
-    .tag{ font-size: 12px; color:#b7d1ff; background:#0d2a4a; padding:4px 8px; border-radius: 999px; border:1px solid rgba(255,255,255,.1); }
-    .price{ font-weight:800; margin: 12px 0 0; }
-    .price .old{ opacity:.65; text-decoration: line-through; margin-right:8px; font-weight:700; }
-    .price .now{ font-weight:900; font-size:20px; color:#b0ffda; }
-    .price .badge{ margin-left:8px; padding:2px 8px; border-radius:999px; background:#083b2e; color:#a7f3d0; border:1px solid rgba(167,243,208,.25); font-size:12px; }
-    .saleTag{ font-size: 12px; color:#ffe1b2; background:#3a2509; padding:4px 8px; border-radius: 999px; border:1px solid rgba(255,255,255,.08); }
-    .row{ display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; }
-    .icon{ font-size: 28px; }
-    .actions{ display:flex; gap:8px; margin-top: 12px; }
-    .btn-buy{ flex:1; background: linear-gradient(135deg, #25d366, #128c7e); color:#001b14; }
-    .btn-ghost{ flex:0 0 auto; background: transparent; border:1px solid rgba(255,255,255,.12); color: var(--muted); }
+    .notice{margin-top:22px;padding:16px;border-radius:14px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--muted);font-size:13px}
 
-    /* Footer */
-    footer{ margin: 40px 0 24px; color: var(--muted); text-align:center; }
-    footer a{ color:#cfe5ff; text-decoration: underline; }
+    footer{padding:28px 24px;color:var(--muted);border-top:1px solid rgba(255,255,255,.06);background:linear-gradient(180deg,rgba(11,18,32,.8),rgba(11,18,32,.95))}
+    .footgrid{display:grid;gap:16px;grid-template-columns:1fr}
+    @media (min-width:900px){.footgrid{grid-template-columns:1fr 1fr}}
 
-    @media (max-width: 980px){ .hero{ grid-template-columns: 1fr; } }
-    @media (max-width: 900px){ .card{ grid-column: span 6; } }
-    @media (max-width: 600px){ .card{ grid-column: span 12; } }
+    .float-wa{position:fixed;right:18px;bottom:18px;z-index:50;display:flex;align-items:center;gap:10px;background:linear-gradient(120deg,#00a884,#06d6a0);padding:12px 16px;border-radius:999px;box-shadow:var(--shadow);font-weight:800}
+
+    /* mini helpers */
+    .chip{font-size:12px;color:#b7c3df;border:1px solid rgba(255,255,255,.1);padding:6px 10px;border-radius:999px}
+    .flex{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .mt-8{margin-top:8px}
   </style>
 </head>
 <body>
   <header>
-    <div class="container" style="display:flex; align-items:center; justify-content:space-between; gap:18px;">
-      <div class="brand">
-        <div class="logo" aria-label="Logo Lucas Duarte">LD</div>
+    <div class="nav container">
+      <div class="logo">
+        <div class="logo-mark" aria-hidden="true"></div>
         <div>
-          <h1>Lucas Duarte • Loja Oficial</h1>
-          <span>Equipamentos para estudo e pesquisa em segurança digital</span>
+          <div style="font-size:15px;opacity:.9">Loja</div>
+          <div style="margin-top:-2px;font-size:18px">Lucas Duarte</div>
         </div>
+        <span class="tag">Promoções de lançamento</span>
       </div>
-      <div class="cta">
-        <button class="btn btn-secondary" id="btnAbrirWhats">Falar no WhatsApp</button>
-        <a class="btn btn-primary" href="#produtos">Ver produtos</a>
-      </div>
+      <a class="cta" href="https://wa.link/239il9" target="_blank" rel="noopener" aria-label="Fale no WhatsApp">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.1 1.58 5.89L0 24l6.29-1.64A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52zM12 21.82c-1.9 0-3.75-.5-5.38-1.45l-.39-.23-3.79 1 1.02-3.69-.25-.39A9.78 9.78 0 012.18 12C2.18 6.55 6.55 2.18 12 2.18S21.82 6.55 21.82 12 17.45 21.82 12 21.82zm5.46-6.16c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.67-2.06-.17-.3-.02-.47.13-.62.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.5-.17 0-.37 0-.57 0-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.88 1.22 3.08c.15.2 2.11 3.23 5.12 4.53.72.31 1.27.5 1.7.64.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.69.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" fill="currentColor"/></svg>
+        Falar no WhatsApp
+      </a>
     </div>
   </header>
 
-  <main class="container">
-    <section class="hero">
-      <div>
-        <div class="pill">Transparência • Ética • Conformidade Legal</div>
-        <h2>Ferramentas legais e cursos para elevar sua <span style="color:var(--accent)">segurança digital</span>.</h2>
-        <p>
-          Conteúdo e equipamentos para <b>uso educacional e laboratoriais</b>. Trabalhamos com orientações claras de conformidade. 
-          <b style="color:#e8b86d">Não vendemos bloqueadores de sinal (jammers)</b> e não incentivamos uso indevido de qualquer ferramenta.
-        </p>
-        <div class="notice" style="margin-top:12px; background:#0f2a1f; border-color: rgba(16,185,129,.25);">
-          <b>Promoção de lançamento:</b> preços reduzidos por tempo limitado. Valores já atualizados no catálogo.
+  <main>
+    <section class="hero container">
+      <div class="hero-wrap">
+        <div>
+          <div class="ribbon">
+            <span class="chip">Frete para todo o Brasil</span>
+            <span class="chip">Pagamentos combinados via WhatsApp</span>
+            <span class="chip">Descontos de até 40%</span>
+          </div>
+          <h1 class="title">Tecnologia & Segurança — preços acessíveis em <span style="color:var(--primary)">promoção</span></h1>
+          <p class="subtitle">Loja modelo e profissional para produtos <strong>legais</strong> de tecnologia e cibersegurança. Todos os botões levam direto ao WhatsApp do Lucas para finalizar o pedido.</p>
+          <div class="mt-8">
+            <a class="cta" href="https://wa.link/239il9" target="_blank" rel="noopener">Quero comprar pelo WhatsApp</a>
+          </div>
         </div>
-        <div class="cta">
-          <button class="btn btn-primary" id="btnWhatsHero">Comprar pelo WhatsApp</button>
-          <a class="btn btn-secondary" href="#politicas">Políticas & Avisos</a>
-        </div>
-        <div class="notice" style="margin-top:16px">
-          <b>Aviso legal:</b> verifique a legislação local antes de adquirir ou utilizar qualquer equipamento de rádio, RFID ou Wi‑Fi.
-          Produtos destinados a pesquisa, testes de penetração autorizados e ensino.
-        </div>
-      </div>
-      <div>
-        <div class="notice">
-          <b>Busca rápida</b><br />
-          Use a barra abaixo para encontrar produtos e selecione uma categoria para filtrar.
-        </div>
-        <div class="toolbar">
-          <label class="input" for="q" aria-label="Pesquisar produtos">
-            <span>🔎</span>
-            <input id="q" placeholder="Procurar por nome ou descrição… (ex.: 'SDR', 'RFID', 'curso')" />
-          </label>
-          <div class="chips" id="chips"></div>
+        <div class="hero-card">
+          <div class="hero-grid">
+            <div>
+              <div class="img" aria-hidden="true"> 
+                <!-- Ícone RTL-SDR (recepção) -->
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><path d="M12 3v6m0 0a6 6 0 100 12 6 6 0 000-12z" stroke="currentColor" stroke-width="1.5"/><path d="M3 9c2-2 5-3 9-3s7 1 9 3" stroke="currentColor" stroke-width="1.5" opacity=".7"/></svg>
+              </div>
+              <div style="margin-top:6px;color:var(--muted);font-size:13px">Kits SDR (recepção) em oferta</div>
+            </div>
+            <div>
+              <div class="img" aria-hidden="true">
+                <!-- Ícone NFC -->
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="16" rx="3" stroke="currentColor" stroke-width="1.5"/><path d="M9 9h6v6H9z" stroke="currentColor" stroke-width="1.5"/></svg>
+              </div>
+              <div style="margin-top:6px;color:var(--muted);font-size:13px">Leitores NFC/Acr122U</div>
+            </div>
+            <div>
+              <div class="img" aria-hidden="true">
+                <!-- Ícone livro/curso -->
+                <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 016.5 3H20v16.5A1.5 1.5 0 0118.5 21H6.5A2.5 2.5 0 014 18.5V5.5z" stroke="currentColor" stroke-width="1.5"/><path d="M8 6h8" stroke="currentColor" stroke-width="1.5"/></svg>
+              </div>
+              <div style="margin-top:6px;color:var(--muted);font-size:13px">Livros & materiais didáticos</div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section id="produtos" class="grid" aria-live="polite"></section>
+    <section class="section container">
+      <h2>Produtos em promoção</h2>
+      <div class="grid">
+        <!-- Produto 1 -->
+        <article class="card col-3">
+          <span class="badge">-35%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Raspberry Pi -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><circle cx="9" cy="11" r="2" stroke="currentColor" stroke-width="1.5"/><circle cx="15" cy="11" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Kit Raspberry Pi 4 (4GB)</div>
+          <div class="desc">Mini‑PC ideal para laboratórios de redes e automação.</div>
+          <div class="price"><span class="old">R$ 599,90</span><span class="new">R$ 389,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+        
+        <!-- Produto 2 -->
+        <article class="card col-3">
+          <span class="badge">-28%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Wi-Fi USB -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><path d="M2 9c2.5-2 5.5-3 10-3s7.5 1 10 3" stroke="currentColor" stroke-width="1.5"/><path d="M6 12c1.8-1.2 4-2 6-2s4.2.8 6 2" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="16" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Adaptador Wi‑Fi USB AC (modo monitor)*</div>
+          <div class="desc">Para estudos de redes e auditorias legais em ambiente controlado.</div>
+          <div class="price"><span class="old">R$ 249,90</span><span class="new">R$ 179,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
 
-    <section id="politicas" style="margin-top:32px">
+        <!-- Produto 3 -->
+        <article class="card col-3">
+          <span class="badge">-22%</span>
+          <div class="img" aria-hidden="true">
+            <!-- NFC -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><rect x="4" y="5" width="16" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M9 9h6v6H9z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Leitor NFC ACR122U</div>
+          <div class="desc">Leitura/escrita de cartões NFC para protótipos e educação.</div>
+          <div class="price"><span class="old">R$ 259,90</span><span class="new">R$ 202,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Produto 4 -->
+        <article class="card col-3">
+          <span class="badge">-30%</span>
+          <div class="img" aria-hidden="true">
+            <!-- SDR RX -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v6" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Kit RTL‑SDR V3 (recepção)*</div>
+          <div class="desc">Recepção de rádio para aprendizado de RF (somente RX).</div>
+          <div class="price"><span class="old">R$ 329,90</span><span class="new">R$ 229,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Produto 5 -->
+        <article class="card col-3">
+          <span class="badge">-18%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Maleta -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 7V5a2 2 0 012-2h4a2 2 0 012 2v2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Maleta Faraday (tamanho M)</div>
+          <div class="desc">Bloqueio de sinais para transporte seguro de dispositivos.</div>
+          <div class="price"><span class="old">R$ 219,90</span><span class="new">R$ 179,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Produto 6 -->
+        <article class="card col-3">
+          <span class="badge">-25%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Testador cabo -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><rect x="5" y="5" width="6" height="14" rx="2" stroke="currentColor" stroke-width="1.5"/><rect x="13" y="8" width="6" height="11" rx="2" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Testador de Cabos RJ45/RJ11</div>
+          <div class="desc">Verificação rápida de continuidade e pinagem de cabos.</div>
+          <div class="price"><span class="old">R$ 119,90</span><span class="new">R$ 89,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Produto 7 -->
+        <article class="card col-3">
+          <span class="badge">-32%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Cabo -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><path d="M4 12h6a2 2 0 012 2v5M20 12h-6a2 2 0 00-2 2v5" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Cabo USB‑C blindado (1m)</div>
+          <div class="desc">Alta durabilidade e transferência de dados estável.</div>
+          <div class="price"><span class="old">R$ 69,90</span><span class="new">R$ 47,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Produto 8 -->
+        <article class="card col-3">
+          <span class="badge">-40%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Livro -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><path d="M5 5.5A2.5 2.5 0 017.5 3H20v16.5A1.5 1.5 0 0118.5 21H7.5A2.5 2.5 0 015 18.5V5.5z" stroke="currentColor" stroke-width="1.5"/><path d="M8 7h8M8 10h8" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Livro: Fundamentos de Segurança</div>
+          <div class="desc">Base sólida para iniciantes e profissionais.</div>
+          <div class="price"><span class="old">R$ 149,90</span><span class="new">R$ 89,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+              
+        <!-- Produto 9: Flipper Zero -->
+        <article class="card col-3">
+          <span class="badge">-23%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Ícone flipper -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><rect x="5" y="7" width="14" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M9 10h6M9 13h4" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Flipper Zero — multiferramenta de laboratório*</div>
+          <div class="desc">Automação, depuração e pesquisa educacional em dispositivos eletrônicos.</div>
+          <div class="price"><span class="old">R$ 1.549,90</span><span class="new">R$ 1.189,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Produto 10: HackRF One -->
+        <article class="card col-3">
+          <span class="badge">-21%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Ícone RF -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="13" r="6" stroke="currentColor" stroke-width="1.5"/><path d="M12 3v6M4 9c2-2 5-3 8-3s6 1 8 3" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">HackRF One (TX/RX 1–6 GHz)*</div>
+          <div class="desc">Plataforma SDR para pesquisa de RF. Transmita somente em faixas permitidas.</div>
+          <div class="price"><span class="old">R$ 2.499,90</span><span class="new">R$ 1.969,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Produto 11: Proxmark3 RDV4 -->
+        <article class="card col-3">
+          <span class="badge">-18%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Ícone RFID -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M8 10h8M8 13h6" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Proxmark3 RDV4 — pesquisa RFID*</div>
+          <div class="desc">Ferramenta avançada para estudo de 125 kHz e 13,56 MHz (autorizado).</div>
+          <div class="price"><span class="old">R$ 2.199,90</span><span class="new">R$ 1.799,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Produto 12: ChameleonTiny Pro -->
+        <article class="card col-3">
+          <span class="badge">-22%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Ícone cartão -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><rect x="3" y="7" width="18" height="10" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M6 11h6" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">ChameleonTiny Pro — emulador NFC*</div>
+          <div class="desc">Emulação/estudo de cartões MIFARE para fins educacionais.</div>
+          <div class="price"><span class="old">R$ 899,90</span><span class="new">R$ 699,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Produto 13: Kit Tags -->
+        <article class="card col-3">
+          <span class="badge">-35%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Ícone tag -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><path d="M3 12l7-7h7l4 4v7l-7 7-11-11z" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Kit 20 Tags (NFC + 125 kHz)</div>
+          <div class="desc">Pacote para testes em laboratório: cartões, chaveiros e adesivos.</div>
+          <div class="price"><span class="old">R$ 199,90</span><span class="new">R$ 129,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+        <!-- Produto 14: Acessórios Flipper -->
+        <article class="card col-3">
+          <span class="badge">-30%</span>
+          <div class="img" aria-hidden="true">
+            <!-- Ícone GPIO -->
+            <svg width="90" height="90" viewBox="0 0 24 24" fill="none"><rect x="4" y="6" width="16" height="12" rx="2" stroke="currentColor" stroke-width="1.5"/><path d="M7 9h10M7 12h8M7 15h6" stroke="currentColor" stroke-width="1.5"/></svg>
+          </div>
+          <div class="name">Acessórios p/ Flipper (GPIO & expansão)*</div>
+          <div class="desc">Placas e módulos para projetos didáticos com o Flipper.</div>
+          <div class="price"><span class="old">R$ 299,90</span><span class="new">R$ 209,90</span></div>
+          <div class="buy">
+            <a class="btn btn-whatsapp" href="https://wa.link/239il9" target="_blank" rel="noopener">Comprar no WhatsApp</a>
+          </div>
+        </article>
+
+      </div>
+
       <div class="notice">
-        <p style="margin:0"><b>Políticas & Conformidade</b></p>
-        <ul style="margin:8px 0 0 18px; color:var(--muted)">
-          <li>Somente realizamos venda para <b>uso educacional e profissional autorizado</b>.</li>
-          <li><b>Não comercializamos jammers</b> (bloqueadores de sinal). Itens proibidos por lei ficam fora do nosso catálogo.</li>
-          <li>Equipamentos de rádio (ex.: SDR) devem ser operados dentro das normas da <b>Anatel</b> e demais órgãos competentes.</li>
-          <li>Recomendamos seguir <b>códigos de ética</b> e obter consentimento explícito antes de qualquer teste.</li>
-        </ul>
+        <strong>Aviso importante:</strong> não oferecemos ou auxiliamos a venda de <em>bloqueadores de sinal ("jammers")</em>. Produtos listados são para <strong>uso legal, educativo e profissional</strong>. Equipamentos com capacidade de transmissão de RF (ex.: <em>HackRF One</em>) devem operar <strong>somente em frequências permitidas</strong> e podem exigir <strong>licenças</strong>; cumpra as normas da <strong>ANATEL</strong> e as leis locais. Itens marcados com * são destinados a <strong>laboratórios e ambientes controlados</strong>, sempre com autorização expressa.
+      </div>
+    </section>
+
+    <section class="section container">
+      <h2>Dúvidas frequentes</h2>
+      <div class="footgrid">
+        <div>
+          <p><strong>Como finalizo a compra?</strong><br/>Clique em qualquer botão <em>Comprar no WhatsApp</em>. Você será atendido diretamente pelo Lucas.</p>
+          <p><strong>Tem garantia?</strong><br/>Oferecemos garantia contra defeitos de fabricação de 3 meses (consulte condições no WhatsApp).</p>
+        </div>
+        <div>
+          <p><strong>Envio e prazos</strong><br/>Postamos em até 2 dias úteis após a confirmação. Código de rastreio enviado no WhatsApp.</p>
+          <p><strong>Nota fiscal</strong><br/>Emitida conforme disponibilidade do produto. Solicite durante o atendimento.</p>
+        </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <div>© <span id="ano"></span> Lucas Duarte • Personagem educativo do projeto André VIP.</div>
-      <div>Atendimento: <a id="linkWhatsFooter" href="#">WhatsApp</a></div>
+    <div class="container" style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap">
+      <div>© <span id="year"></span> Lucas Duarte — Loja de Tecnologia & Segurança</div>
+      <div class="flex">
+        <span class="chip">Ética e conformidade</span>
+        <span class="chip">Atendimento rápido</span>
+        <span class="chip">Promoções reais</span>
+      </div>
     </div>
   </footer>
 
+  <a class="float-wa" href="https://wa.link/239il9" target="_blank" rel="noopener" aria-label="WhatsApp flutuante">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.52 3.48A11.94 11.94 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.1 1.58 5.89L0 24l6.29-1.64A11.94 11.94 0 0012 24c6.63 0 12-5.37 12-12 0-3.2-1.25-6.22-3.48-8.52zM12 21.82c-1.9 0-3.75-.5-5.38-1.45l-.39-.23-3.79 1 1.02-3.69-.25-.39A9.78 9.78 0 012.18 12C2.18 6.55 6.55 2.18 12 2.18S21.82 6.55 21.82 12 17.45 21.82 12 21.82zm5.46-6.16c-.3-.15-1.77-.87-2.05-.97-.27-.1-.47-.15-.66.15-.2.3-.76.97-.93 1.17-.17.2-.34.22-.64.07-.3-.15-1.26-.46-2.4-1.47-.89-.79-1.49-1.76-1.67-2.06-.17-.3-.02-.47.13-.62.13-.13.3-.34.45-.51.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.66-1.6-.9-2.19-.24-.58-.48-.5-.66-.5-.17 0-.37 0-.57 0-.2 0-.52.07-.79.37-.27.3-1.04 1.02-1.04 2.49s1.07 2.88 1.22 3.08c.15.2 2.11 3.23 5.12 4.53.72.31 1.27.5 1.7.64.72.23 1.37.2 1.88.12.57-.09 1.77-.72 2.02-1.42.25-.69.25-1.3.17-1.42-.07-.12-.27-.2-.57-.35z" fill="currentColor"/></svg>
+    Falar no WhatsApp
+  </a>
+
   <script>
-    // ====== CONFIGURAÇÕES ======
-    const WHATS_BASE = "https://wa.link/239il9"; // link fornecido pelo cliente
-
-    // Catálogo (somente itens legais / educacionais)
-    const PRODUCTS = [
-      {
-        id: "flipper-zero-kit",
-        name: "Flipper Zero – Kit Básico",
-        icon: "🦦",
-        price: "R$ 1.099,00",
-        oldPrice: "R$ 1.299,00",
-        badge: "-15%",
-        category: "Toolkits",
-        blurb: "Plataforma multifuncional para pesquisa educacional. Uso responsável e dentro da lei.",
-      },
-      {
-        id: "hackrf-one",
-        name: "HackRF One – SDR Transceptor",
-        icon: "📡",
-        price: "R$ 1.990,00",
-        oldPrice: "R$ 2.190,00",
-        badge: "-9%",
-        category: "SDR",
-        blurb: "Transceptor SDR 1–6 GHz para laboratório e ensino. Exige observância às normas de rádio.",
-      },
-      {
-        id: "proxmark3-rdv4",
-        name: "Proxmark3 RDV4 – Pesquisa RFID/NFC",
-        icon: "💳",
-        price: "R$ 1.690,00",
-        oldPrice: "R$ 1.890,00",
-        badge: "-11%",
-        category: "RFID",
-        blurb: "Ferramenta avançada para análise de RFID/NFC em ambiente controlado e autorizado.",
-      },
-      {
-        id: "alfa-awus036ach",
-        name: "Adaptador Wi‑Fi Alfa AWUS036ACH",
-        icon: "📶",
-        price: "R$ 289,00",
-        oldPrice: "R$ 349,00",
-        badge: "-17%",
-        category: "Wi‑Fi",
-        blurb: "Dual‑band com alto ganho para estudos de redes sem fio e monitoramento autorizado.",
-      },
-      {
-        id: "faraday-bag",
-        name: "Bolsa Faraday (Tamanho M)",
-        icon: "👜",
-        price: "R$ 99,00",
-        oldPrice: "R$ 129,00",
-        badge: "-23%",
-        category: "Acessórios",
-        blurb: "Proteção contra sinais para transporte seguro de dispositivos durante análises.",
-      },
-      {
-        id: "usb-data-blocker",
-        name: "USB Data Blocker",
-        icon: "🔌",
-        price: "R$ 39,00",
-        oldPrice: "R$ 59,00",
-        badge: "-34%",
-        category: "Acessórios",
-        blurb: "Bloqueia dados em portas USB públicas, permitindo apenas carregamento seguro.",
-      },
-      {
-        id: "curso-fundamentos",
-        name: "Curso – Fundamentos de Cibersegurança",
-        icon: "🎓",
-        price: "R$ 49,00",
-        oldPrice: "R$ 97,00",
-        badge: "-49%",
-        category: "Cursos",
-        blurb: "Introdução prática e ética à segurança digital com exemplos do dia a dia.",
-      },
-      {
-        id: "antenna-915",
-        name: "Antena 915 MHz (SMA)",
-        icon: "🛰️",
-        price: "R$ 69,00",
-        oldPrice: "R$ 89,00",
-        badge: "-22%",
-        category: "SDR",
-        blurb: "Antena sintonizada para experimentos em bandas ISM dentro das normas vigentes.",
-      }
-    ];
-
-    const CATEGORIES = ["Todos", "Toolkits", "SDR", "RFID", "Wi‑Fi", "Acessórios", "Cursos"];
-
-    // ====== UTIL ======
-    function whatsUrlFor(product){
-      const base = WHATS_BASE.trim();
-      // Para links wa.link, geralmente a mensagem já está pré-configurada
-      if (base.includes('wa.link')) {
-        return base;
-      }
-      const msg = encodeURIComponent(`Olá, Lucas! Tenho interesse no produto: ${product.name} (ID: ${product.id}). Pode me enviar detalhes e condições?`);
-      const sep = base.includes('?') ? '&' : '?';
-      return `${base}${sep}text=${msg}`;
-    } (ID: ${product.id}). Pode me enviar detalhes e condições?`);
-      return `${WHATS_BASE}?text=${msg}`;
-    }
-
-    function el(tag, attrs = {}, children = []){
-      const $e = document.createElement(tag);
-      Object.entries(attrs).forEach(([k,v]) => {
-        if(k === 'class') $e.className = v; else if(k === 'text') $e.textContent = v; else if(k.startsWith('on')) $e.addEventListener(k.slice(2), v); else $e.setAttribute(k, v);
-      });
-      (Array.isArray(children) ? children : [children]).forEach(c => c && $e.append(c.nodeType ? c : document.createTextNode(c)));
-      return $e;
-    }
-
-    // ====== RENDER ======
-    const grid = document.getElementById('produtos');
-    const chipsWrap = document.getElementById('chips');
-    const q = document.getElementById('q');
-
-    function renderChips(){
-      chipsWrap.innerHTML = '';
-      CATEGORIES.forEach((c,i) => {
-        const chip = el('button', { class: 'chip' + (i===0 ? ' active' : ''), 'data-cat': c, onclick: () => selectCategory(c) }, c);
-        chipsWrap.appendChild(chip);
-      });
-    }
-
-    let state = { category: 'Todos', query: '' };
-
-    function priceBlock(p){
-      if(p.oldPrice){
-        const wrap = el('div', { class: 'price' });
-        wrap.append(
-          el('span', { class: 'old' }, p.oldPrice),
-          el('span', { class: 'now' }, p.price),
-          p.badge ? el('span', { class: 'badge' }, p.badge) : null
-        );
-        return wrap;
-      }
-      return priceBlock(p);
-    }
-
-    function selectCategory(cat){
-      state.category = cat;
-      [...chipsWrap.children].forEach(ch => ch.classList.toggle('active', ch.getAttribute('data-cat') === cat));
-      renderProducts();
-    }
-
-    function matches(p){
-      const okCat = state.category === 'Todos' || p.category === state.category;
-      const text = (p.name + ' ' + p.blurb + ' ' + p.category).toLowerCase();
-      const okQ = !state.query || text.includes(state.query.toLowerCase());
-      return okCat && okQ;
-    }
-
-    function renderProducts(){
-      grid.innerHTML = '';
-      const results = PRODUCTS.filter(matches);
-      if(!results.length){
-        grid.appendChild(el('div', { class: 'card', style:'grid-column: span 12; text-align:center' }, [
-          el('h3', { text: 'Nenhum produto encontrado' }),
-          el('p', { text: 'Tente limpar os filtros ou buscar por outro termo.' })
-        ]));
-        return;
-      }
-      results.forEach(p => {
-        const card = el('article', { class: 'card', 'aria-label': p.name });
-        const tagsBox = el('div', {}, [
-          el('span', { class: 'tag' }, p.category),
-          p.oldPrice ? el('span', { class: 'saleTag' }, 'Promoção') : null
-        ]);
-        const top = el('div', { class: 'row' }, [
-          el('div', {}, [
-            el('div', { class: 'icon', 'aria-hidden': 'true' }, p.icon),
-            el('h3', { text: p.name }),
-            el('p', { text: p.blurb })
-          ]),
-          tagsBox
-        ]);
-        const bottom = el('div', {}, [
-          el('div', { class: 'row' }, [
-            priceBlock(p),
-            el('div', { class: 'actions' }, [
-              el('a', { class: 'btn btn-buy', href: whatsUrlFor(p), target: '_blank', rel: 'noopener', 'aria-label': `Comprar ${p.name} no WhatsApp` }, 'Comprar no WhatsApp'),
-              el('button', { class: 'btn btn-ghost', onclick: () => alert(`ID do produto: ${p.id}`) }, 'Detalhes')
-            ])
-          ])
-        ]);
-        card.append(top, bottom);
-        grid.appendChild(card);
-      });
-    }
-
-    // ====== EVENTS ======
-    document.getElementById('btnAbrirWhats').addEventListener('click', () => window.open(whatsUrlFor({id:'contato', name:'Atendimento Geral'}), '_blank'));
-    document.getElementById('btnWhatsHero').addEventListener('click', () => window.open(whatsUrlFor({id:'contato', name:'Atendimento Geral'}), '_blank'));
-    document.getElementById('linkWhatsFooter').setAttribute('href', whatsUrlFor({id:'contato', name:'Atendimento'}));
-    q.addEventListener('input', (e) => { state.query = e.target.value; renderProducts(); });
-
-    // ====== INIT ======
-    renderChips();
-    renderProducts();
-    document.getElementById('ano').textContent = new Date().getFullYear();
+    document.getElementById('year').textContent = new Date().getFullYear();
   </script>
 </body>
 </html>
